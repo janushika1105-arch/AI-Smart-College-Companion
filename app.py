@@ -108,26 +108,26 @@ resume_score, improvements = resume_agent.calculate_score(
 # --------------------------------
 # Dashboard
 # --------------------------------
-st.header("📋 Student Report")
+st.header(" Student Report")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.success(f"✅ Attendance : {attendance}")
-    st.info(f"📈 Performance : {performance}")
-    st.write(f"💼 Recommended Job : **{job}**")
+    st.success(f" Attendance : {attendance}")
+    st.info(f" Performance : {performance}")
+    st.write(f" Recommended Job : **{job}**")
 
 with col2:
-    st.success(f"🎯 Placement : {placement}")
+    st.success(f"Placement : {placement}")
 
-    st.subheader("💻 Strong Skills")
+    st.subheader(" Strong Skills")
 
     if len(strong_skills) == 0:
         st.warning("No Strong Skills")
     else:
         for skill in strong_skills:
-            st.write("✅", skill)
-st.subheader("📄 Resume Score")
+            st.write("", skill)
+st.subheader("Resume Score")
 
 st.metric(
     label="Overall Resume Score",
@@ -135,50 +135,50 @@ st.metric(
 )
 
 st.progress(resume_score / 100)
-st.subheader("🛠️ Areas to Improve")
+st.subheader(" Areas to Improve")
 
 if len(improvements) == 0:
-    st.success("Excellent Resume! 🎉")
+    st.success("Excellent Resume!")
 else:
     for item in improvements:
-        st.write("❌", item)
+        st.write("", item)
 # --------------------------------
 # Missing Skills
 # --------------------------------
-st.subheader("❌ Missing Skills")
+st.subheader(" Missing Skills")
 
 if len(missing_skills) == 0:
-    st.success("🎉 No Missing Skills")
+    st.success(" No Missing Skills")
 else:
     for skill in missing_skills:
-        st.write("❌", skill)
+        st.write("", skill)
 
 # --------------------------------
 # Recommended Courses
 # --------------------------------
-st.subheader("📚 Recommended Courses")
+st.subheader("Recommended Courses")
 
 if len(courses) == 0:
     st.success("No Courses Required")
 else:
     for course in courses:
-        st.write("📖", course)
+        st.write(" ", course)
 
 # --------------------------------
 # Recommended Events
 # --------------------------------
-st.subheader("🎉 Recommended Events")
+st.subheader("Recommended Events")
 
 if len(events) == 0:
     st.info("No Events Available")
 else:
     for event in events:
-        st.write("🎯", event)
+        st.write(" ", event)
 
 # --------------------------------
 # Subject Marks Chart
 # --------------------------------
-st.subheader("📊 Subject Marks")
+st.subheader(" Subject Marks")
 
 marks = pd.DataFrame({
     "Subject": ["Maths", "Python", "AI"],
